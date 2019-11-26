@@ -612,37 +612,48 @@ type (
 // 用户相关数据结构
 type (
 	UserParams struct {
-		ID       string                 `json:"id"`
-		Address  string                 `json:"address,omitempty"`
-		Avatar   string                 `json:"avatar,omitempty"`
-		Email    string                 `json:"email,omitempty"`
-		Gender   string                 `json:"gender,omitempty"`
-		Mobile   string                 `json:"mobile,omitempty"`
-		Name     string                 `json:"name,omitempty"`
-		Metadata map[string]interface{} `json:"metadata,omitempty"`
+		ID           string                 `json:"id"`
+		Name         string                 `json:"name,omitempty"`   // required
+		Mobile       string                 `json:"mobile,omitempty"` // required
+		Address      string                 `json:"address,omitempty"`
+		Avatar       string                 `json:"avatar,omitempty"` // required
+		Email        string                 `json:"email,omitempty"`
+		Gender       string                 `json:"gender,omitempty"`
+		Metadata     map[string]interface{} `json:"metadata,omitempty"` // required
+		IdentityInfo IdentityInfo           `json:"identity_info"`
+	}
+	IdentityInfo struct {
+		Type      string `json:"type"`       // 证件类型。01：身份证、02：企业营业执照、03：护照、04：港澳通行证、05：台湾往来通行证、06：临时身份证（目前仅支持 01、02 两种类型）
+		Id        string `json:"id"`         // 证件号码
+		ValidFrom string `json:"valid_from"` // 证件起始日期 yyyy-mm-dd
+		ValidUtil string `json:"valid_util"` // 证件结束日期 yyyy-mm-dd
 	}
 
 	User struct {
-		ID                   string                 `json:"id"`
-		Object               string                 `json:"object"`
-		App                  string                 `json:"app"`
-		Address              string                 `json:"address"`
-		Type                 string                 `json:"type"`        // v1.3 add
-		RelatedApp           string                 `json:"related_app"` // v1.3 add
-		Available_coupons    int64                  `json:"available_coupons"`
-		Avatar               string                 `json:"avatar"`
-		Available_balance    int64                  `json:"available_balance"`
-		Withdrawable_balance int64                  `json:"withdrawable_balance"`
-		Created              int64                  `json:"created"`
-		Disabled             bool                   `json:"disabled"`
-		Email                string                 `json:"email"`
-		Gender               string                 `json:"gender"`
-		Identified           bool                   `json:"identified"`
-		Livemode             bool                   `json:"livemode"`
-		Mobile               string                 `json:"mobile"`
-		Name                 string                 `json:"name"`
-		Metadata             map[string]interface{} `json:"metadata"`
-		SettleAccounts       []SettleAccount        `json:"settle_accounts"`
+		ID                  string                 `json:"id"`
+		Object              string                 `json:"object"`
+		App                 string                 `json:"app"`
+		Address             string                 `json:"address"`
+		TotalBalance        int64                  `json:"total_balance"`
+		AvailableBalance    int64                  `json:"available_balance"`
+		AvailableCoupons    int64                  `json:"available_coupons"`
+		Avatar              string                 `json:"avatar"`
+		WithdrawableBalance int64                  `json:"withdrawable_balance"`
+		Created             int64                  `json:"created"`
+		Disabled            bool                   `json:"disabled"`
+		Email               string                 `json:"email"`
+		Gender              string                 `json:"gender"`
+		Identified          bool                   `json:"identified"`
+		Livemode            bool                   `json:"livemode"`
+		Metadata            map[string]interface{} `json:"metadata"`
+		Mobile              string                 `json:"mobile"`
+		Name                string                 `json:"name"`
+		Type                string                 `json:"type"`        // v1.3 add
+		RelatedApp          string                 `json:"related_app"` // v1.3 add
+		SettleAccounts      []SettleAccount        `json:"settle_accounts"`
+		IdentityInfo        IdentityInfo           `json:"identity_info"`
+		Extra               map[string]interface{} `json:"extra"`
+		ParentUserId        string                 `json:"parent_user_id"`
 	}
 
 	SettleAccountParams struct {
