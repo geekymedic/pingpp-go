@@ -11,7 +11,7 @@ import (
 	"fmt"
 	"io/ioutil"
 
-	pingpp "github.com/pingplusplus/pingpp-go/pingpp"
+	pingpp "github.com/geekymedic/pingpp-go/pingpp"
 )
 
 var Demo = new(VerifyDemo)

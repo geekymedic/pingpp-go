@@ -7,9 +7,9 @@
 package channel
 
 import (
-	"github.com/pingplusplus/pingpp-go/demo/common"
-	pingpp "github.com/pingplusplus/pingpp-go/pingpp"
-	"github.com/pingplusplus/pingpp-go/pingpp/channel"
+	"github.com/geekymedic/pingpp-go/demo/common"
+	pingpp "github.com/geekymedic/pingpp-go/pingpp"
+	"github.com/geekymedic/pingpp-go/pingpp/channel"
 )
 
 var Demo = new(ChannelDemo)

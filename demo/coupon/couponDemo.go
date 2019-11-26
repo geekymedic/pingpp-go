@@ -7,8 +7,8 @@
 package coupon
 
 import (
-	pingpp "github.com/pingplusplus/pingpp-go/pingpp"
-	"github.com/pingplusplus/pingpp-go/pingpp/coupon"
+	pingpp "github.com/geekymedic/pingpp-go/pingpp"
+	"github.com/geekymedic/pingpp-go/pingpp/coupon"
 )
 
 var Demo = new(CouponDemo)

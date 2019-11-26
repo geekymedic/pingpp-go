@@ -3,7 +3,7 @@ package identification
 import (
 	"log"
 
-	pingpp "github.com/pingplusplus/pingpp-go/pingpp"
+	pingpp "github.com/geekymedic/pingpp-go/pingpp"
 )
 
 const (

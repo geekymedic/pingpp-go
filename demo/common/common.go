@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/pingplusplus/pingpp-go/demo/common/charge"
-	"github.com/pingplusplus/pingpp-go/demo/common/transfer"
-	"github.com/pingplusplus/pingpp-go/demo/common/withdrawal"
+	"github.com/geekymedic/pingpp-go/demo/common/charge"
+	"github.com/geekymedic/pingpp-go/demo/common/transfer"
+	"github.com/geekymedic/pingpp-go/demo/common/withdrawal"
 )
 
 func Response(data interface{}, err error) {

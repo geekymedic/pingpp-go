@@ -3,7 +3,7 @@ package subBank
 import (
 	"net/url"
 
-	pingpp "github.com/pingplusplus/pingpp-go/pingpp"
+	pingpp "github.com/geekymedic/pingpp-go/pingpp"
 )
 
 // Client 支行客户端

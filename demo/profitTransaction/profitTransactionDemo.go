@@ -8,8 +8,8 @@
 package profitTransaction
 
 import (
-	"github.com/pingplusplus/pingpp-go/pingpp"
-	"github.com/pingplusplus/pingpp-go/pingpp/profitTransaction"
+	"github.com/geekymedic/pingpp-go/pingpp"
+	"github.com/geekymedic/pingpp-go/pingpp/profitTransaction"
 )
 
 // Demo 分账明细示例

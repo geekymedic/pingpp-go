@@ -8,9 +8,9 @@ package agreement
  */
 
 import (
-	"github.com/pingplusplus/pingpp-go/demo/common"
-	pingpp "github.com/pingplusplus/pingpp-go/pingpp"
-	agreement "github.com/pingplusplus/pingpp-go/pingpp/agreement"
+	"github.com/geekymedic/pingpp-go/demo/common"
+	pingpp "github.com/geekymedic/pingpp-go/pingpp"
+	agreement "github.com/geekymedic/pingpp-go/pingpp/agreement"
 )
 
 // Demo 示例对象

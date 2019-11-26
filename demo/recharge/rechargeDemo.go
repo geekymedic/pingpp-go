@@ -12,9 +12,9 @@ import (
 
 	"fmt"
 
-	"github.com/pingplusplus/pingpp-go/demo/common"
-	pingpp "github.com/pingplusplus/pingpp-go/pingpp"
-	"github.com/pingplusplus/pingpp-go/pingpp/recharge"
+	"github.com/geekymedic/pingpp-go/demo/common"
+	pingpp "github.com/geekymedic/pingpp-go/pingpp"
+	"github.com/geekymedic/pingpp-go/pingpp/recharge"
 )
 
 var Demo = new(RechargeDemo)

@@ -11,18 +11,18 @@ pingpp 文件夹里是 SDK 文件
 导入 pingpp 模块
 
 ```go
-go get github.com/pingplusplus/pingpp-go/pingpp
+go get github.com/geekymedic/pingpp-go/pingpp
 ```
 
 导入后，在调用的时候需要
 
 ```go
-import (pingpp "github.com/pingplusplus/pingpp-go/pingpp")
+import (pingpp "github.com/geekymedic/pingpp-go/pingpp")
 ```
 具体使用相应模块的话还需要
 
 ```go
-import (pingpp "github.com/pingplusplus/pingpp-go/pingpp/xxx")
+import (pingpp "github.com/geekymedic/pingpp-go/pingpp/xxx")
 ```
 
 ## 接入方法

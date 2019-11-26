@@ -9,9 +9,9 @@ package sub_app
 import (
 	"time"
 
-	"github.com/pingplusplus/pingpp-go/demo/common"
-	pingpp "github.com/pingplusplus/pingpp-go/pingpp"
-	"github.com/pingplusplus/pingpp-go/pingpp/app"
+	"github.com/geekymedic/pingpp-go/demo/common"
+	pingpp "github.com/geekymedic/pingpp-go/pingpp"
+	"github.com/geekymedic/pingpp-go/pingpp/app"
 )
 
 var Demo = new(AppDemo)

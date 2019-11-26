@@ -1,8 +1,8 @@
 package customs
 
 import (
-	pingpp "github.com/pingplusplus/pingpp-go/pingpp"
-	"github.com/pingplusplus/pingpp-go/pingpp/customs"
+	pingpp "github.com/geekymedic/pingpp-go/pingpp"
+	"github.com/geekymedic/pingpp-go/pingpp/customs"
 )
 
 var Demo = new(CustomsDemo)

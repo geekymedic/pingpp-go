@@ -7,8 +7,8 @@
 package royalty
 
 import (
-	pingpp "github.com/pingplusplus/pingpp-go/pingpp"
-	"github.com/pingplusplus/pingpp-go/pingpp/royaltySettlement"
+	pingpp "github.com/geekymedic/pingpp-go/pingpp"
+	"github.com/geekymedic/pingpp-go/pingpp/royaltySettlement"
 )
 
 var SettlementDemo = new(RoyaltySettlementDemo)

@@ -5,8 +5,8 @@ import (
 	"strconv"
 	"time"
 
-	pingpp "github.com/pingplusplus/pingpp-go/pingpp"
-	"github.com/pingplusplus/pingpp-go/pingpp/redEnvelope"
+	pingpp "github.com/geekymedic/pingpp-go/pingpp"
+	"github.com/geekymedic/pingpp-go/pingpp/redEnvelope"
 )
 
 var Demo = new(RedEnvelopeDemo)

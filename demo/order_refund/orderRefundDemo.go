@@ -7,9 +7,9 @@
 package order_refund
 
 import (
-	"github.com/pingplusplus/pingpp-go/demo/common"
-	pingpp "github.com/pingplusplus/pingpp-go/pingpp"
-	"github.com/pingplusplus/pingpp-go/pingpp/orderRefund"
+	"github.com/geekymedic/pingpp-go/demo/common"
+	pingpp "github.com/geekymedic/pingpp-go/pingpp"
+	"github.com/geekymedic/pingpp-go/pingpp/orderRefund"
 )
 
 var Demo = new(OrderRefundDemo)

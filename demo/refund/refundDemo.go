@@ -1,8 +1,8 @@
 package refund
 
 import (
-	pingpp "github.com/pingplusplus/pingpp-go/pingpp"
-	"github.com/pingplusplus/pingpp-go/pingpp/refund"
+	pingpp "github.com/geekymedic/pingpp-go/pingpp"
+	"github.com/geekymedic/pingpp-go/pingpp/refund"
 )
 
 var Demo = new(RefundDemo)

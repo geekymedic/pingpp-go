@@ -16,7 +16,7 @@ import (
 	"net/http"
 	"strings"
 
-	pingpp "github.com/pingplusplus/pingpp-go/pingpp"
+	pingpp "github.com/geekymedic/pingpp-go/pingpp"
 )
 
 var webhookDemo = new(WebhookDemo)

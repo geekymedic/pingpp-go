@@ -3,8 +3,8 @@ package event
 import (
 	//"encoding/json"
 
-	"github.com/pingplusplus/pingpp-go/pingpp"
-	"github.com/pingplusplus/pingpp-go/pingpp/event"
+	"github.com/geekymedic/pingpp-go/pingpp"
+	"github.com/geekymedic/pingpp-go/pingpp/event"
 )
 
 var Demo = new(EventDemo)

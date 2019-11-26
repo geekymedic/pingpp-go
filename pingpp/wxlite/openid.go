@@ -9,7 +9,7 @@ import (
 	"net/url"
 	"time"
 
-	pingpp "github.com/pingplusplus/pingpp-go/pingpp"
+	pingpp "github.com/geekymedic/pingpp-go/pingpp"
 )
 
 const maxBytes int64 = 10 * 1024 * 1024

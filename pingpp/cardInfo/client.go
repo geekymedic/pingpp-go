@@ -4,7 +4,7 @@ import (
 	"log"
 	"time"
 
-	pingpp "github.com/pingplusplus/pingpp-go/pingpp"
+	pingpp "github.com/geekymedic/pingpp-go/pingpp"
 )
 
 // Client cardInfo 请求客户端

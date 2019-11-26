@@ -10,8 +10,8 @@ import (
 	"math/rand"
 	"net/http"
 
-	pingpp "github.com/pingplusplus/pingpp-go/pingpp"
-	"github.com/pingplusplus/pingpp-go/pingpp/charge"
+	pingpp "github.com/geekymedic/pingpp-go/pingpp"
+	"github.com/geekymedic/pingpp-go/pingpp/charge"
 	// utils "pingpp/pingpp/utils"
 	"strconv"
 	"strings"

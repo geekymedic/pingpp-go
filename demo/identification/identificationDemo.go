@@ -1,8 +1,8 @@
 package identification
 
 import (
-	pingpp "github.com/pingplusplus/pingpp-go/pingpp"
-	"github.com/pingplusplus/pingpp-go/pingpp/identification"
+	pingpp "github.com/geekymedic/pingpp-go/pingpp"
+	"github.com/geekymedic/pingpp-go/pingpp/identification"
 )
 
 var Demo = new(IdentificationDemo)
