@@ -651,7 +651,7 @@ type (
 		Type                string                 `json:"type"`        // v1.3 add
 		RelatedApp          string                 `json:"related_app"` // v1.3 add
 		SettleAccounts      []SettleAccount        `json:"settle_accounts"`
-		IdentityInfo        IdentityInfo           `json:"identity_info"`
+		IdentityInfo        []IdentityInfo         `json:"identity_info"`
 		Extra               map[string]interface{} `json:"extra"`
 		ParentUserId        string                 `json:"parent_user_id"`
 	}
