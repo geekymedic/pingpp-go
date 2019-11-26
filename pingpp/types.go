@@ -620,7 +620,7 @@ type (
 		Email        string                 `json:"email,omitempty"`
 		Gender       string                 `json:"gender,omitempty"`
 		Metadata     map[string]interface{} `json:"metadata,omitempty"` // required
-		IdentityInfo IdentityInfo           `json:"identity_info"`
+		IdentityInfo []IdentityInfo         `json:"identity_info"`      // required
 	}
 	IdentityInfo struct {
 		Type      string `json:"type"`       // 证件类型。01：身份证、02：企业营业执照、03：护照、04：港澳通行证、05：台湾往来通行证、06：临时身份证（目前仅支持 01、02 两种类型）
