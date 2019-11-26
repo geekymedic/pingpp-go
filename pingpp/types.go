@@ -242,7 +242,6 @@ type (
 
 /*应用内快捷支付相关数据类型*/
 type (
-
 	// CustomerParams 创建顾客的请求参数
 	CustomerParams struct {
 		App         string                 `json:"app"`
@@ -340,7 +339,7 @@ type (
 		Order_no string `json:"order_no"`
 		Amount   uint64 `json:"amount"`
 		App      string `json:"app"`
-		//Attachable bool        `json:"attachable"`
+		// Attachable bool        `json:"attachable"`
 		Card interface{} `json:"card"`
 	}
 
@@ -352,7 +351,7 @@ type (
 		Livemode  bool   `json:"livemode"`
 		Used      bool   `json:"used"`
 		Time_used int64  `json:"time_used"`
-		//Attachable bool                   `json:"attachable"`
+		// Attachable bool                   `json:"attachable"`
 		Type     string                 `json:"type"`
 		Card     map[string]interface{} `json:"card"`
 		Sms_code map[string]interface{} `json:"sms_code"`
@@ -436,7 +435,6 @@ type (
 
 /*webhooks 相关数据类型*/
 type (
-
 	// Event webhooks 反馈数据类型
 	Event struct {
 		Id               string `json:"id"`
@@ -462,7 +460,7 @@ type (
 	}
 )
 
-//身份认证相关数据结构
+// 身份认证相关数据结构
 type (
 	IdentificationParams struct {
 		Type string                 `json:"type"`
@@ -611,7 +609,7 @@ type (
 	}
 )
 
-//用户相关数据结构
+// 用户相关数据结构
 type (
 	UserParams struct {
 		ID       string                 `json:"id"`
@@ -680,9 +678,56 @@ type (
 		ListMeta
 		Values []*User `json:"data"`
 	}
+
+	// 证件上传
+	UploadFileParam struct {
+		User        string      `json:"user"`
+		Type        Type        `json:"type"`
+		AccNo       string      `json:"acc_no,omitempty"`
+		OperateType OperateType `json:"operate_type,omitempty"`
+		Pic         string      `json:"pic"`
+		PicFmt      string      `json:"pic_fmt"`
+		PicType     PicType     `json:"pic_type"`
+	}
+	UploadFile struct {
+		User          string `json:"user"`
+		LiveMode      bool   `json:"livemode"`
+		AccNo         string `json:"acc_no"`
+		PicExternalId string `json:"pic_external_id"`
+	}
 )
 
-//多级商户相关数据结构 V1.3 add
+type Type string
+
+const (
+	BusinessType Type = "business"
+	CustomerType Type = "customer"
+)
+
+type OperateType string
+
+const (
+	NewAddOperateType = "00"
+	UpdateOperateType = "01"
+)
+
+type PicType string
+
+// 101：个人身份证正面（个人信息面），
+// 102：个人身份证反面（国徽面），
+// 201：企业证件照片，
+// 202：法人身份证正面（个人信息面），
+// 203：法人身份证反面（国徽面）。
+// 个人用户需使用 101、102 上传两次，对公用户需使用 201、202、203 上传三次。
+const (
+	PersonalIdCardFrontPicType  = "101" // 个人身份证正面（个人信息面）
+	PersonalIdCardBackPicType   = "102" // 个人身份证反面（国徽面）
+	EnterpriseCredentialPicType = "201" // 企业证件照片
+	LegalIdCardFrontPicType     = "202" // 法人身份证正面（个人信息面)
+	LegalIdCardBackPicType      = "203" // 法人身份证反面（国徽面）
+)
+
+// 多级商户相关数据结构 V1.3 add
 type (
 	SubAppParams struct {
 		DisplayName string                 `json:"display_name"`
@@ -834,7 +879,7 @@ type (
 	}
 )
 
-//Order相关的数据结构
+// Order相关的数据结构
 type (
 	// OrderCreateParams 创建Order请求数据类型
 	OrderCreateParams struct {
@@ -1164,8 +1209,7 @@ type (
 )
 
 type (
-
-	//企业清算账户交易明细
+	// 企业清算账户交易明细
 	// Fee                 int64  `json:"fee"`  v1.3 delete
 	// User_fee            int64  `json:"user_fee"` v1.3 delete
 	AssetTransaction struct {
@@ -1399,7 +1443,6 @@ type (
 
 // splitProfit 分账
 type (
-
 	// SplitProfit 分账（split_profit）对象说明
 	SplitProfit struct {
 		ID            string                 `json:"id"`             // split_profit 对象 ID，由 Ping++ 生成。
@@ -1457,7 +1500,6 @@ type (
 
 // splitTransaction 分账明细
 type (
-
 	// ProfitTransaction 分账明细 profit_transaction
 	ProfitTransaction struct {
 		ID            string `json:"id"`             // profit_transaction 对象 ID，由 Ping++ 生成。
@@ -1485,7 +1527,6 @@ type (
 
 // splitReceiver 分账接收方
 type (
-
 	// SplitReceiver 分账接收方（`split_receiver`）对象说明
 	SplitReceiver struct {
 		ID       string                 `json:"id"`       // split_receiver 对象 ID，由 Ping++ 生成。
@@ -1520,7 +1561,6 @@ type (
 
 // subBank 开户支行
 type (
-
 	// SubBank 开户支行
 	SubBank struct {
 		Object      string `json:"object"`        // 值为 `sub_bank`。
