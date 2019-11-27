@@ -11,7 +11,7 @@ type (
 		ID               string                 `json:"id"`
 		Object           string                 `json:"object"`
 		App              string                 `json:"app"`
-		Created          string                 `json:"created"`
+		Created          int64                  `json:"created"`
 		DisplayName      string                 `json:"display_name"`
 		Account          string                 `json:"account"`
 		Description      string                 `json:"description"`
