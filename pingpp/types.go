@@ -740,41 +740,6 @@ const (
 
 // 多级商户相关数据结构 V1.3 add
 type (
-	SubAppParams struct {
-		DisplayName string                 `json:"display_name"`
-		User        string                 `json:"user"`
-		Metadata    map[string]interface{} `json:"metadata,omitempty"`
-		Description string                 `json:"description,omitempty"`
-		ParentApp   string                 `json:"parent_app,omitempty"`
-	}
-
-	SubApp struct {
-		ID               string                 `json:"id"`
-		Object           string                 `json:"object"`
-		Created          int64                  `json:"created"`
-		DisplayName      string                 `json:"display_name"`
-		Account          string                 `json:"account"`
-		Description      string                 `json:"description"`
-		Metadata         map[string]interface{} `json:"metadata"`
-		AvailableMethods []string               `json:"available_methods"`
-		User             string                 `json:"user"`
-		Level            int                    `json:"level"`
-		ParentApp        string                 `json:"parent_app"`
-	}
-
-	SubAppUpdateParams struct {
-		DisplayName string                 `json:"display_name,omitempty"`
-		Metadata    map[string]interface{} `json:"metadata,omitempty"`
-		Description string                 `json:"description,omitempty"`
-		ParentApp   string                 `json:"parent_app,omitempty"`
-	}
-
-	// SubAppList 商户列表
-	SubAppList struct {
-		ListMeta
-		Values []*SubApp `json:"data"`
-	}
-
 	Channel struct {
 		Object      string                 `json:"object"`
 		Created     int64                  `json:"created"`
