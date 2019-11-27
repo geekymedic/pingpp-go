@@ -10,8 +10,8 @@ type ContactParam struct {
 	ContactCertValidFrom  string `json:"contact_cert_valid_from"`  // required yyyy-mm-dd
 	ContactCertValidUntil string `json:"contact_cert_valid_until"` // required
 	ContactCertMobile     string `json:"contact_cert_mobile"`      // required
-	ContactJobType        int    `json:"contact_job_type"`
-	ContactRelationShip   int    `json:"contact_relation_ship"`
+	ContactJobType        int    `json:"contact_job_type,omitempty"`
+	ContactRelationShip   int    `json:"contact_relation_ship,omitempty"`
 }
 
 type Contact struct {
