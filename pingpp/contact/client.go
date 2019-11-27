@@ -33,6 +33,6 @@ func (c Client) New(appId string, params *pingpp.ContactParam) (*pingpp.Contact,
 	}
 
 	contact := &pingpp.Contact{}
-	err := c.B.Call("POST", fmt.Sprintf("/apps/%s/users/upload_pic", appId), c.Key, nil, paramsString, contact)
+	err := c.B.Call("POST", fmt.Sprintf("/apps/%s/sub_apps/contact", appId), c.Key, nil, paramsString, contact)
 	return contact, err
 }
