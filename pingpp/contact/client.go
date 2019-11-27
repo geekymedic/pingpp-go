@@ -1,4 +1,4 @@
-package contract
+package contact
 
 import (
 	"fmt"
