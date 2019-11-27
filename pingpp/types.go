@@ -619,8 +619,8 @@ type (
 		Avatar       string                 `json:"avatar,omitempty"` // required
 		Email        string                 `json:"email,omitempty"`
 		Gender       string                 `json:"gender,omitempty"`
-		Metadata     map[string]interface{} `json:"metadata,omitempty"` // required
-		IdentityInfo IdentityInfo           `json:"identity_info"`      // required
+		Metadata     map[string]interface{} `json:"metadata,omitempty"`
+		IdentityInfo IdentityInfo           `json:"identity_info"` // required
 	}
 	IdentityInfo struct {
 		Type       string `json:"type"`        // 证件类型。01：身份证、02：企业营业执照、03：护照、04：港澳通行证、05：台湾往来通行证、06：临时身份证（目前仅支持 01、02 两种类型）
@@ -634,7 +634,7 @@ type (
 		Object              string                 `json:"object"`
 		App                 string                 `json:"app"`
 		Address             string                 `json:"address"`
-		TotalBalance        int64                  `json:"total_balance"`
+		TotalBalance        int64                  `json:"total_balance"` // 用户余额总额（available_balance + 在途余额 + 冻结余额），其中 available_balance 是包含赠送余额的。
 		AvailableBalance    int64                  `json:"available_balance"`
 		AvailableCoupons    int64                  `json:"available_coupons"`
 		Avatar              string                 `json:"avatar"`

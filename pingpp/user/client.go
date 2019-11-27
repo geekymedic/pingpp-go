@@ -61,11 +61,11 @@ func (c Client) List(appId string, params *pingpp.PagingParams) (*pingpp.UserLis
 	return userList, err
 }
 
-func Update(appId, userId string, params map[string]interface{}) (*pingpp.User, error) {
+func Update(appId, userId string, params interface{}) (*pingpp.User, error) {
 	return getC().Update(appId, userId, params)
 }
 
-func (c Client) Update(appId, userId string, params map[string]interface{}) (*pingpp.User, error) {
+func (c Client) Update(appId, userId string, params interface{}) (*pingpp.User, error) {
 	paramsString, _ := pingpp.JsonEncode(params)
 	if pingpp.LogLevel > 2 {
 		log.Printf("params of update user  to pingpp is :\n %v\n ", string(paramsString))
