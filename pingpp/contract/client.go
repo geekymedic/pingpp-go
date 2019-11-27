@@ -1,4 +1,4 @@
-package upload
+package contract
 
 import (
 	"fmt"
@@ -7,7 +7,6 @@ import (
 	"github.com/geekymedic/pingpp-go/pingpp"
 )
 
-// 存管新增
 type Client struct {
 	B   pingpp.Backend
 	Key string
@@ -17,11 +16,11 @@ func getC() Client {
 	return Client{pingpp.GetBackend(pingpp.APIBackend), pingpp.Key}
 }
 
-func New(appId string, params *pingpp.UploadFileParam) (*pingpp.UploadFile, error) {
-	return getC().UploadFile(appId, params)
+func New(appId string, params *pingpp.ContactParam) (*pingpp.Contact, error) {
+	return getC().New(appId, params)
 }
 
-func (c Client) UploadFile(appId string, params *pingpp.UploadFileParam) (*pingpp.UploadFile, error) {
+func (c Client) New(appId string, params *pingpp.ContactParam) (*pingpp.Contact, error) {
 	paramsString, errs := pingpp.JsonEncode(params)
 	if errs != nil {
 		if pingpp.LogLevel > 0 {
@@ -33,7 +32,7 @@ func (c Client) UploadFile(appId string, params *pingpp.UploadFileParam) (*pingp
 		log.Printf("params of create order is :\n %v\n ", string(paramsString))
 	}
 
-	uploadFile := &pingpp.UploadFile{}
-	err := c.B.Call("POST", fmt.Sprintf("/apps/%s/users/upload_pic", appId), c.Key, nil, paramsString, uploadFile)
-	return uploadFile, err
+	contact := &pingpp.Contact{}
+	err := c.B.Call("POST", fmt.Sprintf("/apps/%s/users/upload_pic", appId), c.Key, nil, paramsString, contact)
+	return contact, err
 }
