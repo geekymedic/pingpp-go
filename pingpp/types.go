@@ -620,13 +620,13 @@ type (
 		Email        string                 `json:"email,omitempty"`
 		Gender       string                 `json:"gender,omitempty"`
 		Metadata     map[string]interface{} `json:"metadata,omitempty"`
-		IdentityInfo IdentityInfo           `json:"identity_info"` // required
+		IdentityInfo IdentityInfo           `json:"identity_info,omitempty"` // required
 	}
 	IdentityInfo struct {
-		Type       string `json:"type"`        // 证件类型。01：身份证、02：企业营业执照、03：护照、04：港澳通行证、05：台湾往来通行证、06：临时身份证（目前仅支持 01、02 两种类型）
-		Id         string `json:"id"`          // 证件号码
-		ValidFrom  string `json:"valid_from"`  // 证件起始日期 yyyy-mm-dd
-		ValidUntil string `json:"valid_until"` // 证件结束日期 yyyy-mm-dd
+		Type       string `json:"type,omitempty"`        // 证件类型。01：身份证、02：企业营业执照、03：护照、04：港澳通行证、05：台湾往来通行证、06：临时身份证（目前仅支持 01、02 两种类型）
+		Id         string `json:"id,omitempty"`          // 证件号码
+		ValidFrom  string `json:"valid_from,omitempty"`  // 证件起始日期 yyyy-mm-dd
+		ValidUntil string `json:"valid_until,omitempty"` // 证件结束日期 yyyy-mm-dd
 	}
 
 	User struct {

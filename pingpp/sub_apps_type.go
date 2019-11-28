@@ -37,11 +37,11 @@ type (
 )
 
 type DepositoryUser struct {
-	Id           string       `json:"id"`                //  用户 id，1~64 位。
-	Name         string       `json:"name"`              // 公司名称，1~32 位，中英文长度都算 1（后面添加结算账号需与此名字一致）。
-	Mobile       string       `json:"mobile"`            // 法人手机号，1~20 位。
-	IdentityInfo IdentityInfo `json:"identity_info"`     // 证件信息 identity_info
-	Address      string       `json:"address,omitempty"` // 办公地址
-	Email        string       `json:"email,omitempty"`
-	Gender       string       `json:"gender"` // MALE FEMALE
+	Id           string       `json:"id,omitempty"`            // 用户 id，1~64 位。
+	Name         string       `json:"name,omitempty"`          // 公司名称，1~32 位，中英文长度都算 1（后面添加结算账号需与此名字一致）。
+	Mobile       string       `json:"mobile,omitempty"`        // 法人手机号，1~20 位。
+	IdentityInfo IdentityInfo `json:"identity_info,omitempty"` // 证件信息 identity_info
+	Address      string       `json:"address,omitempty"`       // 办公地址
+	Email        string       `json:"email,omitempty"`         // Optional
+	Gender       string       `json:"gender"`                  // Optional MALE FEMALE
 }
