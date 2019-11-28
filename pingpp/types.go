@@ -612,7 +612,7 @@ type (
 // 用户相关数据结构
 type (
 	UserParams struct {
-		ID           string                 `json:"id"`
+		ID           string                 `json:"id,omitempty"`
 		Name         string                 `json:"name,omitempty"`   // required
 		Mobile       string                 `json:"mobile,omitempty"` // required
 		Address      string                 `json:"address,omitempty"`
