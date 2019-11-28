@@ -139,6 +139,9 @@ func (s *ApiBackend) Do(req *http.Request, v interface{}) error {
 		}
 
 		if res.StatusCode >= 400 {
+			if LogLevel > 0 {
+				log.Printf("url:%s, state code: %v, detail: %s\n", req.URL.Path, res.StatusCode, reqBody)
+			}
 			var errMap map[string]interface{}
 			JsonDecode(resBody, &errMap)
 
