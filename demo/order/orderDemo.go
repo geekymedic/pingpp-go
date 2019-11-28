@@ -45,15 +45,15 @@ func (c *OrderDemo) New() (*pingpp.Order, error) {
 	orderno := r.Intn(999999999999999)
 
 	params := &pingpp.OrderCreateParams{
-		App:               "app_1Gqj58ynP0mHeX1q",
-		Uid:               "1477895856250",
-		Merchant_order_no: strconv.Itoa(orderno),
-		Amount:            1,
-		Currency:          "cny",
-		Client_ip:         "127.0.0.1",
-		Subject:           "Go SDK Subject",
-		Body:              "Go SDK Body",
-		Description:       "Go SDK Description",
+		App:             "app_1Gqj58ynP0mHeX1q",
+		Uid:             "1477895856250",
+		MerchantOrderNo: strconv.Itoa(orderno),
+		Amount:          1,
+		Currency:        "cny",
+		ClientIp:        "127.0.0.1",
+		Subject:         "Go SDK Subject",
+		Body:            "Go SDK Body",
+		Description:     "Go SDK Description",
 		RoyaltyUsers: []pingpp.RoyaltyUser{
 			pingpp.RoyaltyUser{
 				User:   "user_test_0001",
@@ -76,9 +76,9 @@ func (c *OrderDemo) New() (*pingpp.Order, error) {
 func (c *OrderDemo) Pay() (*pingpp.Order, error) {
 	var chargeAmount int64 = 1
 	orderPayParams := &pingpp.OrderPayParams{
-		Charge_amount: &chargeAmount,
-		Channel:       c.demoChannel,
-		Extra:         common.ChargeExtra[c.demoChannel],
+		ChargeAmount: &chargeAmount,
+		Channel:      c.demoChannel,
+		Extra:        common.ChargeExtra[c.demoChannel],
 	}
 	return order.Pay(c.demoOrderID, orderPayParams)
 }
