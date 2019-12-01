@@ -670,12 +670,15 @@ type (
 	}
 
 	Recipient struct {
-		Account      string `json:"account"`
-		Name         string `json:"name"`
-		Type         string `json:"type,omitempty"`
-		OpenBank     string `json:"open_bank,omitempty"`
-		OpenBankCode string `json:"open_bank_code,omitempty"`
-		ForceCheck   bool   `json:"force_check,omitempty"`
+		Account      string                 `json:"account"`
+		Name         string                 `json:"name"`
+		Type         string                 `json:"type,omitempty"`
+		OpenBank     string                 `json:"open_bank,omitempty"`
+		Mobile       string                 `json:"mobile,omitempty"`
+		CardType     int                    `json:"card_type,omitempty"`
+		OpenBankCode string                 `json:"open_bank_code,omitempty"`
+		ForceCheck   bool                   `json:"force_check,omitempty"`
+		Extra        map[string]interface{} `json:"extra,omitempty"`
 	}
 
 	// SettleAccountList 结算账户列表
@@ -690,6 +693,18 @@ type (
 		Values []*User `json:"data"`
 	}
 
+	SettleAccountsVerifyParams struct {
+		ReceiveAmount int64 `json:"receive_amount"`
+	}
+
+	SettleAccountsVerify struct {
+		Id        string    `json:"id"`
+		Object    string    `json:"object,omitempty"`
+		Created   int64     `json:"created,omitempty"`
+		LiveMode  bool      `json:"live_mode,omitempty"`
+		Channel   string    `json:"channel,omitempty"`
+		Recipient Recipient `json:"recipient,omitempty"`
+	}
 	// 证件上传
 	UploadFileParam struct {
 		User        string      `json:"user"`

@@ -77,3 +77,24 @@ func (c Client) Delete(appId, userId, settleAccountId string) (*pingpp.DeleteRes
 	}
 	return result, err
 }
+
+func Verify(appId, userId, settleAccount string, params *pingpp.SettleAccountsVerifyParams) (*pingpp.SettleAccountsVerify, error) {
+	return getC().Verify(appId, userId, settleAccount, params)
+}
+
+func (c Client) Verify(appId, userId, settleAccount string, params *pingpp.SettleAccountsVerifyParams) (*pingpp.SettleAccountsVerify, error) {
+	paramsString, errs := pingpp.JsonEncode(params)
+	if errs != nil {
+		if pingpp.LogLevel > 0 {
+			log.Printf("SettleAccountParams Marshall Errors is : %q/n", errs)
+		}
+		return nil, errs
+	}
+	if pingpp.LogLevel > 2 {
+		log.Printf("params of create SettleAccount is :\n %v\n ", string(paramsString))
+	}
+
+	verify := &pingpp.SettleAccountsVerify{}
+	err := c.B.Call("POST", fmt.Sprintf("/apps/%s/users/%s/settle_accounts/%s/verify", appId, userId, settleAccount), c.Key, nil, paramsString, verify)
+	return verify, err
+}
