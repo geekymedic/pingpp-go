@@ -16,7 +16,7 @@ type (
 		Account          string                 `json:"account"`
 		Description      string                 `json:"description"`
 		Metadata         map[string]interface{} `json:"metadata"`
-		AvailableMethods string                 `json:"available_methods"`
+		AvailableMethods []string               `json:"available_methods"`
 		User             User                   `json:"user"`
 		Level            int                    `json:"level"`
 		ParentApp        string                 `json:"parent_app"`
