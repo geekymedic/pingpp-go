@@ -718,8 +718,8 @@ const (
 type OperateType string
 
 const (
-	NewAddOperateType = "00"
-	UpdateOperateType = "01"
+	NewAddOperateType OperateType = "00"
+	UpdateOperateType OperateType = "01"
 )
 
 type PicType string
@@ -731,11 +731,11 @@ type PicType string
 // 203：法人身份证反面（国徽面）。
 // 个人用户需使用 101、102 上传两次，对公用户需使用 201、202、203 上传三次。
 const (
-	PersonalIdCardFrontPicType  = "101" // 个人身份证正面（个人信息面）
-	PersonalIdCardBackPicType   = "102" // 个人身份证反面（国徽面）
-	EnterpriseCredentialPicType = "201" // 企业证件照片
-	LegalIdCardFrontPicType     = "202" // 法人身份证正面（个人信息面)
-	LegalIdCardBackPicType      = "203" // 法人身份证反面（国徽面）
+	PersonalIdCardFrontPicType  PicType = "101" // 个人身份证正面（个人信息面）
+	PersonalIdCardBackPicType   PicType = "102" // 个人身份证反面（国徽面）
+	EnterpriseCredentialPicType PicType = "201" // 企业证件照片
+	LegalIdCardFrontPicType     PicType = "202" // 法人身份证正面（个人信息面)
+	LegalIdCardBackPicType      PicType = "203" // 法人身份证反面（国徽面）
 )
 
 // 多级商户相关数据结构 V1.3 add
