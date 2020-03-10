@@ -21,7 +21,7 @@ func New(appId, userId string, params *pingpp.SettleAccountParams) (*pingpp.Sett
 	return getC().New(appId, userId, params)
 }
 
-func (c Client) New(appId, userId string, params *pingpp.SettleAccountParams) (*pingpp.SettleAccount, error) {
+func (c Client) New(appId, userId, settleAccount string, params *pingpp.SettleAccountParams) (*pingpp.SettleAccount, error) {
 	paramsString, errs := pingpp.JsonEncode(params)
 	if errs != nil {
 		if pingpp.LogLevel > 0 {
@@ -34,7 +34,7 @@ func (c Client) New(appId, userId string, params *pingpp.SettleAccountParams) (*
 	}
 
 	settle_account := &pingpp.SettleAccount{}
-	err := c.B.Call("POST", fmt.Sprintf("/apps/%s/users/%s/settle_accounts", appId, userId), c.Key, nil, paramsString, settle_account)
+	err := c.B.Call("POST", fmt.Sprintf("/apps/%s/users/%s/settle_accounts/%s", appId, userId, settleAccount), c.Key, nil, paramsString, settle_account)
 	return settle_account, err
 }
 
