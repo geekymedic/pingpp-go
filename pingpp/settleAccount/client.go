@@ -17,8 +17,8 @@ func getC() Client {
 	return Client{pingpp.GetBackend(pingpp.APIBackend), pingpp.Key}
 }
 
-func New(appId, userId string, params *pingpp.SettleAccountParams) (*pingpp.SettleAccount, error) {
-	return getC().New(appId, userId, params)
+func New(appId, userId string, account string, params *pingpp.SettleAccountParams) (*pingpp.SettleAccount, error) {
+	return getC().New(appId, userId, account, params)
 }
 
 func (c Client) New(appId, userId, settleAccount string, params *pingpp.SettleAccountParams) (*pingpp.SettleAccount, error) {
