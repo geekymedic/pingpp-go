@@ -627,6 +627,7 @@ type (
 		Id         string `json:"id,omitempty"`          // 证件号码
 		ValidFrom  string `json:"valid_from,omitempty"`  // 证件起始日期 yyyy-mm-dd
 		ValidUntil string `json:"valid_until,omitempty"` // 证件结束日期 yyyy-mm-dd
+		Profession string `json:"profession"`            //
 	}
 
 	User struct {
