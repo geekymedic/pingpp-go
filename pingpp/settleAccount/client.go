@@ -17,11 +17,11 @@ func getC() Client {
 	return Client{pingpp.GetBackend(pingpp.APIBackend), pingpp.Key}
 }
 
-func New(appId, userId string, account string, params *pingpp.SettleAccountParams) (*pingpp.SettleAccount, error) {
-	return getC().New(appId, userId, account, params)
+func New(appId, userId string, string, params *pingpp.SettleAccountParams) (*pingpp.SettleAccount, error) {
+	return getC().New(appId, userId, params)
 }
 
-func (c Client) New(appId, userId, settleAccount string, params *pingpp.SettleAccountParams) (*pingpp.SettleAccount, error) {
+func (c Client) New(appId, userId string, params *pingpp.SettleAccountParams) (*pingpp.SettleAccount, error) {
 	paramsString, errs := pingpp.JsonEncode(params)
 	if errs != nil {
 		if pingpp.LogLevel > 0 {
@@ -34,7 +34,24 @@ func (c Client) New(appId, userId, settleAccount string, params *pingpp.SettleAc
 	}
 
 	settle_account := &pingpp.SettleAccount{}
-	err := c.B.Call("POST", fmt.Sprintf("/apps/%s/users/%s/settle_accounts/%s", appId, userId, settleAccount), c.Key, nil, paramsString, settle_account)
+	err := c.B.Call("POST", fmt.Sprintf("/apps/%s/users/%s/settle_accounts", appId, userId), c.Key, nil, paramsString, settle_account)
+	return settle_account, err
+}
+
+func (c Client) Update(appId, userId, settleAccount string, params *pingpp.SettleAccountParams) (*pingpp.SettleAccount, error) {
+	paramsString, errs := pingpp.JsonEncode(params)
+	if errs != nil {
+		if pingpp.LogLevel > 0 {
+			log.Printf("SettleAccountParams Marshall Errors is : %q/n", errs)
+		}
+		return nil, errs
+	}
+	if pingpp.LogLevel > 2 {
+		log.Printf("params of create SettleAccount is :\n %v\n ", string(paramsString))
+	}
+
+	settle_account := &pingpp.SettleAccount{}
+	err := c.B.Call("PUT", fmt.Sprintf("/apps/%s/users/%s/settle_accounts/%s", appId, userId, settleAccount), c.Key, nil, paramsString, settle_account)
 	return settle_account, err
 }
 
