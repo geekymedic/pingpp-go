@@ -1012,6 +1012,19 @@ type (
 		Rule        Rule   `json:"rule"`
 	}
 
+	RoyaltyCreateParams struct {
+		App          string      `json:"app"`
+		Charge       string      `json:"charge"`
+		RoyaltyUsers interface{} `json:"RoyaltyUsers"`
+	}
+
+	RoyaltyCreateReply struct {
+		App       string `json:"app"`
+		Livemode  bool   `json:"livemode"`
+		Order     string `json:"order"`
+		Succeeded bool   `json:"succeeded"`
+	}
+
 	RoyaltyTmplUpdateParams struct {
 		Rule        Rule   `json:"rule,omitempty"`
 		Name        string `json:"name,omitempty"`

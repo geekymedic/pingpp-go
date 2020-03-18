@@ -17,6 +17,27 @@ func getC() Client {
 	return Client{pingpp.GetBackend(pingpp.APIBackend), pingpp.Key}
 }
 
+func New(orderId string, params pingpp.RoyaltyCreateParams) (*pingpp.RoyaltyCreateReply, error) {
+	return getC().New(orderId, params)
+}
+
+func (c Client) New(orderId string, params pingpp.RoyaltyCreateParams) (*pingpp.RoyaltyCreateReply, error) {
+	paramsString, errs := pingpp.JsonEncode(params)
+	if errs != nil {
+		if pingpp.LogLevel > 0 {
+			log.Printf("UserParams Marshall Errors is : %q/n", errs)
+		}
+		return nil, errs
+	}
+	if pingpp.LogLevel > 2 {
+		log.Printf("params of create user is :\n %v\n ", string(paramsString))
+	}
+
+	royaltyReply := &pingpp.RoyaltyCreateReply{}
+	err := c.B.Call("POST", fmt.Sprintf("/orders/%s/royalty_datas", orderId), c.Key, nil, paramsString, royaltyReply)
+	return royaltyReply, err
+}
+
 func BatchUpdate(params *pingpp.RoyaltyBatchUpdateParams) (*pingpp.RoyaltyList, error) {
 	return getC().BatchUpdate(params)
 }
