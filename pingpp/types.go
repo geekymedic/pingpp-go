@@ -1015,7 +1015,7 @@ type (
 	RoyaltyCreateParams struct {
 		App          string      `json:"app"`
 		Charge       string      `json:"charge"`
-		RoyaltyUsers interface{} `json:"royalty_users"`
+		RoyaltyUsers interface{} `json:"RoyaltyUsers"`
 	}
 
 	RoyaltyCreateReply struct {
@@ -1279,7 +1279,7 @@ type (
 		User           string                 `json:"user,omitempty"`
 		Amount         int64                  `json:"amount"`
 		Channel        string                 `json:"channel,omitempty"`
-		User_fee       int64                  `json:"user_fee"`
+		User_fee       int64                  `json:"user_fee,omitempty"`
 		Description    string                 `json:"description,omitempty"`
 		Extra          map[string]interface{} `json:"extra,omitempty"`
 		Metadata       map[string]interface{} `json:"metadata,omitempty"`
