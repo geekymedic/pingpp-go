@@ -1015,7 +1015,7 @@ type (
 	RoyaltyCreateParams struct {
 		App          string      `json:"app"`
 		Charge       string      `json:"charge"`
-		RoyaltyUsers interface{} `json:"RoyaltyUsers"`
+		RoyaltyUsers interface{} `json:"royalty_users"`
 	}
 
 	RoyaltyCreateReply struct {
